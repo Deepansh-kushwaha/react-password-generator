@@ -26,12 +26,15 @@ function App() {
     passRef.current.setSelectionRange(0,99)
     window.navigator.clipboard.writeText(passRef.current.value)
     setClicked('Copied')
-  } ,[password])
+  } ,[])
   useEffect(()=>{passwordGenerator()},[passwordGenerator,length,numallowed,charallowed])
 
   return (
     <>
-      <h1 className="text-4xl text-center">Password Generator</h1>
+    <div className='h-screen flex flex-col justify-center gap-10 items-center'>
+      <div className='flex flex-col gap-5 p-10 rounded-3xl  bg-gradient-to-t from-orange-500 to-pink-500 shadow-[0_5px_1px_2px_rgba(33,33,33,0.1] '>
+
+      <h1 className="text-4xl text-center text-popins font-extrabold">Password Generator</h1>
       <div className="bg-gray-700 rounded-4xl w-full max-w-md mx-auto shadow-md text-orange-500 p-5">
         <div className='flex items-center justify-center rounded-lg overflow-hidden m-4'>
            <input
@@ -76,6 +79,8 @@ function App() {
           <label >Character</label>
            </div>
         </div>
+      </div>
+      </div>
       </div>
     </>
   );
